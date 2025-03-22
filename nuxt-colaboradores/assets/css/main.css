@@ -1,59 +1,22 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #F4F8FB; /* Fundo Principal: Branco Gelo */
+    color: #1B3A4B; /* Texto Principal: Azul-Marinho */
 }
 
+/* Container principal */
+
 .container {
-    width: 80vw; /* 80% da largura da tela */
+    width: 75vw; /* 75% da largura da tela */
     height: calc(100vh - 120px); /* Altura da tela menos a altura do cabeçalho */
     margin: 0 auto; /* Centraliza horizontalmente */
     padding: 20px;
-    background-color: #fff; /* Cor de fundo diferente */
-    border: 1px solid #ccc; /* Borda */
-    border-top: none; /* Remove a borda superior para conectar com o cabeçalho */
-    border-radius: 0 0 8px 8px; /* Bordas arredondadas no fundo */
+    background-color: #A3BAC3; /* Fundo do Contêiner: Cinza Azul */
+    border-radius: 0px; /* Bordas arredondadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    overflow: auto; /* Adiciona barra de rolagem se necessário */
+    overflow: hidden; /* Remove a barra de rolagem */
     position: relative; /* Para posicionamento absoluto dos pseudo-elementos */
-    top: -10px; /* Ajusta a posição para conectar com o cabeçalho */
-}
-
-.header-container {
-    width: 100%; /* Mesma largura do contêiner principal */
-    max-width: 80vw; /* Limite máximo de largura */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    padding-bottom: 0; /* Remove espaçamento inferior */
-    background-color: #f0f0f0; /* Cor de fundo diferente */
-    position: relative; /* Para garantir que o cabeçalho esteja acima do contêiner */
-    z-index: 1; /* Garante que o cabeçalho esteja acima do contêiner */
-}
-
-
-.nav-container {
-    display: flex;
-    justify-content: flex-start; /* Alinha os itens no início */
-    align-items: center;
-}
-
-.nav-link {
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    color: #333;
-    text-decoration: none;
-    border: 1px solid #ccc;
-    border-bottom: none; /* Remove a borda inferior para conectar com o contêiner */
-    border-radius: 8px 8px 0 0; /* Bordas arredondadas no topo */
-    margin-right: 2px; /* Reduz o espaçamento entre as guias */
-}
-
-.nav-link.active {
-    background-color: #fff; /* Cor de fundo igual ao contêiner */
-    border-bottom: 1px solid #fff; /* Remove a borda inferior da guia ativa */
-}
-
-.nav-link:not(.active) {
-    background-color: #e0e0e0; /* Cor de fundo mais escura para guias inativas */
+    top: 0; /* Remove o ajuste de posição */
 }
 
 .layout-container {
@@ -63,5 +26,112 @@ body {
 }
 
 .main-container {
-    width: 80vw; /* Mesma largura do contêiner principal */
+    width: 75vw; /* Mesma largura do contêiner principal */
+    border-radius: 0 0 8px 8px; /* Bordas arredondadas no fundo */
+}
+
+/* Título da página */
+
+.page-title {
+    margin-top: 20px; /* Ajusta a margem superior do título */
+    margin-bottom: 20px; /* Ajusta a margem inferior do título */
+    text-align: center; /* Alinha o título ao centro */
+    color: #fff; /* Texto do Título: Branco */
+    font-size: 2.5rem; /* Tamanho da fonte maior */
+    font-weight: bold; /* Texto em negrito */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra do texto */
+    border-bottom: 3px solid #227C9D; /* Borda inferior */
+    padding-bottom: 10px; /* Espaçamento inferior */
+}
+
+
+/* Tabela de colaboradores */
+
+.table-container {
+    width: 100%;
+    max-width: 90%; /* Ajusta a largura para que a tabela não fique muito grande */
+    margin: 5px auto;
+    padding: 5px;
+    background-color: #227C9D; /* Fundo da Tabela: Azul Médio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto; /* Altura ajustada automaticamente para o conteúdo */
+    max-height: 800px; /* Limita a altura para 10 registros antes da rolagem */
+    overflow-y: auto; /* Só adiciona rolagem se necessário */
+    margin-bottom: 0; /* Remove a margem inferior quando a tabela se ajusta ao conteúdo */
+}
+
+.table-wrapper {
+    max-height: 800px; /* Limita a altura da tabela */
+    overflow-y: auto; /* Só ativa a rolagem se houver mais de 10 registros */
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* Ajusta o tamanho das colunas com base no conteúdo */
+}
+
+.table-container th,
+.table-container td {
+    padding: 12px 16px; /* Espaçamento maior para melhorar o visual */
+    text-align: center; /* Centraliza as colunas */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Fundo das células da tabela */
+    height: 40px; /* Altura de cada linha */
+}
+
+.table-container th {
+    cursor: pointer;
+    background-color: #227C9D; /* Cor de fundo dos cabeçalhos */
+    color: #fff; /* Cor do texto dos cabeçalhos */
+}
+
+.table-container td {
+    white-space: nowrap; /* Evita quebra de linha dentro das células */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Exibe "..." para texto que não cabe */
+}
+
+.table-container td:last-child {
+    text-align: center; /* Centraliza as ações */
+}
+
+.table-container a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+.table-container a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+/* Barra de pesquisa */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ajusta a largura do contêiner de pesquisa */
+    max-width: 75%; /* Define a largura máxima para corresponder à table-container */
+    margin: 0px auto;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #227C9D; /* Bordas e Detalhes: Azul Médio */
+    border-radius: 4px;
+}
+
+.search-icon {
+    margin-left: 10px; /* Adiciona espaço entre a barra de pesquisa e o ícone */
+    color: #333; /* Cor do ícone */
+}
+
+/*Logo*/
+
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
 }

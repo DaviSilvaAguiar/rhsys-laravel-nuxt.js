@@ -42,36 +42,36 @@ const linkProps = computed(() => (props.to ? { to: props.to } : {})) // Atributo
   cursor: pointer;
   transition: background-color 0.3s;
   border: 1px solid transparent;
-   margin-right: 0.5rem; 
+  margin-right: 0.5rem; 
 }
 
-/* Estilo específico para o botão Visualizar (Azul) */
+/* Estilo específico para o botão Visualizar e Editar (Azul Médio) */
 .btn-blue {
-  background-color: #3490dc;
+  background-color: #227C9D; /* Azul Médio */
   color: white;
 }
 
 .btn-blue:hover {
-  background-color: #2779bd;
+  background-color: #1B3A4B; /* Azul-Marinho */
 }
 
-/* Estilo específico para o botão Excluir (Vermelho) */
+/* Estilo específico para o botão Excluir (Laranja Suave) */
 .btn-red {
-  background-color: #e3342f;
+  background-color: #FF9F1C; /* Laranja Suave */
   color: white;
 }
 
 .btn-red:hover {
-  background-color: #cc1f1a;
+  background-color: #CC7A00; /* Laranja mais escuro */
 }
 
 /* Estilo para o botão padrão */
 .btn-default {
-  background-color: #e2e8f0;
-  color: #2d3748;
+  background-color: #A3BAC3; /* Cinza Azul */
+  color: #1B3A4B; /* Azul-Marinho */
 }
 
 .btn-default:hover {
-  background-color: #cbd5e0;
+  background-color: #8A9EA8; /* Cinza Azul mais escuro */
 }
 </style>

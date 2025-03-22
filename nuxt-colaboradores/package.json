@@ -9,6 +9,9 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "@nuxt/eslint": "^1.2.0",
     "@nuxt/icon": "^1.11.0",
     "@nuxt/image": "^1.10.0",
@@ -17,6 +20,7 @@
     "@vueuse/nuxt": "^13.0.0",
     "autoprefixer": "^10.4.21",
     "axios": "^1.8.4",
+    "date-fns": "^4.1.0",
     "eslint": "^9.22.0",
     "nuxt": "^3.16.1",
     "postcss": "^8.5.3",
