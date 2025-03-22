@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    width: 80vw; /* 80% da largura da tela */
+    height: calc(100vh - 120px); /* Altura da tela menos a altura do cabeçalho */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px;
+    background-color: #fff; /* Cor de fundo diferente */
+    border: 1px solid #ccc; /* Borda */
+    border-top: none; /* Remove a borda superior para conectar com o cabeçalho */
+    border-radius: 0 0 8px 8px; /* Bordas arredondadas no fundo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    overflow: auto; /* Adiciona barra de rolagem se necessário */
+    position: relative; /* Para posicionamento absoluto dos pseudo-elementos */
+    top: -10px; /* Ajusta a posição para conectar com o cabeçalho */
+}
+
+.header-container {
+    width: 100%; /* Mesma largura do contêiner principal */
+    max-width: 80vw; /* Limite máximo de largura */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding-bottom: 0; /* Remove espaçamento inferior */
+    background-color: #f0f0f0; /* Cor de fundo diferente */
+    position: relative; /* Para garantir que o cabeçalho esteja acima do contêiner */
+    z-index: 1; /* Garante que o cabeçalho esteja acima do contêiner */
+}
+
+
+.nav-container {
+    display: flex;
+    justify-content: flex-start; /* Alinha os itens no início */
+    align-items: center;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-bottom: none; /* Remove a borda inferior para conectar com o contêiner */
+    border-radius: 8px 8px 0 0; /* Bordas arredondadas no topo */
+    margin-right: 2px; /* Reduz o espaçamento entre as guias */
+}
+
+.nav-link.active {
+    background-color: #fff; /* Cor de fundo igual ao contêiner */
+    border-bottom: 1px solid #fff; /* Remove a borda inferior da guia ativa */
+}
+
+.nav-link:not(.active) {
+    background-color: #e0e0e0; /* Cor de fundo mais escura para guias inativas */
+}
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-container {
+    width: 80vw; /* Mesma largura do contêiner principal */
+}

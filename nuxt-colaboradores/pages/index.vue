@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class= "container">
     <h1>Lista de Colaboradores</h1>
     <table>
       <thead>
@@ -16,9 +16,15 @@
           <td>{{ colaborador.nome_completo }}</td>
           <td>{{ colaborador.data_nascimento }}</td>
           <td>
-            <button @click="visualizar(colaborador)">Visualizar</button>
-            <button @click="editar(colaborador)">Editar</button>
-            <button @click="excluir(colaborador)">Excluir</button>
+            <BaseButton :to="`/visualizar/${colaborador.id}`" type="visualizar">
+              Visualizar
+            </BaseButton>
+            <BaseButton @click="editar(colaborador)" type="editar">
+              Editar
+            </BaseButton>
+            <BaseButton @click="excluir(colaborador)" type="excluir">
+              Excluir
+            </BaseButton>
           </td>
         </tr>
       </tbody>
@@ -28,6 +34,7 @@
 
 <script setup>
 import { useIndex } from '~/composables/useIndex'
+import BaseButton from '~/components/BaseButton.vue'
 
-const { colaboradores, visualizar, editar, excluir } = useIndex()
+const { colaboradores, editar, excluir } = useIndex()
 </script>
