@@ -1,4 +1,19 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"]
+    },
+    "types": ["@nuxt/types"]
+  },
+  "include": [
+    "nuxt.config.ts",
+    "c:/laragon/www/rhSys/nuxt-colaboradores/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

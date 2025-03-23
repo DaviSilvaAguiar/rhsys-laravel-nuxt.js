@@ -34,7 +34,7 @@
               <BaseButton :to="`/visualizar/${colaborador.id}`" type="visualizar">
                 Visualizar
               </BaseButton>
-              <BaseButton @click="editar(colaborador)" type="editar">
+              <BaseButton :to="`/editar/${colaborador.id}`" type="editar">
                 Editar
               </BaseButton>
               <BaseButton @click="excluir(colaborador)" type="excluir">

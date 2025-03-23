@@ -10,7 +10,7 @@ import { NuxtLink } from '#components' // Garantir que NuxtLink seja importado c
 
 const props = defineProps({
   to: { type: String, default: null }, // Rota do link
-  type: { type: String, default: 'default' } // Tipo do botão: 'visualizar', 'editar', 'excluir'
+  type: { type: String, default: 'default' } // Tipo do botão: 'visualizar', 'editar', 'excluir', 'cancelar', 'limpar', 'cadastrar'
 })
 
 const tag = computed(() => (props.to ? NuxtLink : 'button')) // Se tiver o `to`, vai ser um NuxtLink, senão um botão
@@ -19,10 +19,12 @@ const tag = computed(() => (props.to ? NuxtLink : 'button')) // Se tiver o `to`,
 const buttonClass = computed(() => {
   switch (props.type) {
     case 'visualizar':
-      return 'btn btn-blue'
     case 'editar':
+    case 'cadastrar':
       return 'btn btn-blue'
     case 'excluir':
+    case 'cancelar':
+    case 'limpar':
       return 'btn btn-red'
     default:
       return 'btn btn-default'
@@ -45,7 +47,7 @@ const linkProps = computed(() => (props.to ? { to: props.to } : {})) // Atributo
   margin-right: 0.5rem; 
 }
 
-/* Estilo específico para o botão Visualizar e Editar (Azul Médio) */
+/* Estilo específico para o botão Visualizar, Editar, Limpar e Cadastrar (Azul Médio) */
 .btn-blue {
   background-color: #227C9D; /* Azul Médio */
   color: white;
@@ -55,7 +57,7 @@ const linkProps = computed(() => (props.to ? { to: props.to } : {})) // Atributo
   background-color: #1B3A4B; /* Azul-Marinho */
 }
 
-/* Estilo específico para o botão Excluir (Laranja Suave) */
+/* Estilo específico para o botão Excluir e Cancelar (Laranja Suave) */
 .btn-red {
   background-color: #FF9F1C; /* Laranja Suave */
   color: white;

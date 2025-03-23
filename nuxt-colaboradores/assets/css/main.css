@@ -36,14 +36,13 @@ body {
     margin-top: 20px; /* Ajusta a margem superior do título */
     margin-bottom: 20px; /* Ajusta a margem inferior do título */
     text-align: center; /* Alinha o título ao centro */
-    color: #fff; /* Texto do Título: Branco */
+    color: #F4F8FB; /* Texto do Título: Azul-Marinho */
     font-size: 2.5rem; /* Tamanho da fonte maior */
     font-weight: bold; /* Texto em negrito */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra do texto */
     border-bottom: 3px solid #227C9D; /* Borda inferior */
     padding-bottom: 10px; /* Espaçamento inferior */
-}
-
+    width: 100%; /* Faz com que a borda inferior ocupe toda a largura */
+  }
 
 /* Tabela de colaboradores */
 
@@ -135,3 +134,90 @@ body {
     width: 100px; /* Ajuste o tamanho conforme necessário */
     height: auto;
 }
+
+/* -------------------- ESTILIZAÇÃO DA PÁGINA DE COLABORADOR -------------------- */
+
+/* Formulário de Colaborador */
+.colaborador-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .colaborador-container .box {
+    width: 100%;
+    max-width: 1400px; /* Aumenta a largura máxima para a caixa */
+    padding: 20px;
+    background-color: #F4F8FB; /* Fundo Branco */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-top: 100px;
+    border: 4px solid #227C9D; /* Adiciona uma borda azul */
+  }
+  
+  .colaborador-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os grupos de formulário */
+  }
+  
+  .colaborador-container .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  
+  .colaborador-container .form-group label {
+    font-weight: bold; /* Texto em negrito */
+    margin-bottom: 5px; /* Espaçamento inferior */
+  }
+  
+  .colaborador-container .form-group input[type="text"],
+  .colaborador-container .form-group input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #227C9D; /* Bordas Azul Médio */
+    border-radius: 4px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+  }
+  
+  /* Estilo para inputs em linha */
+  .colaborador-container .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os inputs */
+  }
+  
+  .colaborador-container .form-row .form-group {
+    flex: 1;
+    min-width: 200px; /* Largura mínima para os inputs */
+  }
+  
+  /* Grupo de botões */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .left-buttons {
+    margin-top: 100px;
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+  }
+  
+  .right-buttons {
+    margin-top: 100px;
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+  }
+
+    /* Aviso de erro */
+    
+    .invalid-feedback {
+      color: red;
+      font-size: 0.875rem;
+      margin-top: 5px;
+    }

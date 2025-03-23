@@ -36,7 +36,7 @@ class ColaboradorController extends Controller
             'apelido' => 'required|string|max:255',
             'nome_pai' => 'required|string|max:255',
             'nome_mae' => 'required|string|max:255',
-            'cpf' => 'required|string|unique:colaboradores,cpf|max:255',
+            'cpf' => 'required|string|unique:colaboradores,cpf|max:14',
             'data_nascimento' => 'required|date',
             'cargo' => 'required|string|max:255',
         ]);
