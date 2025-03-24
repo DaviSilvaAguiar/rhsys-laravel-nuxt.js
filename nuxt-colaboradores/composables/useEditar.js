@@ -4,32 +4,41 @@ import axios from 'axios'
 
 export function useEditar() {
   const route = useRoute()
-  const router = useRouter() // Defina o router
+  const router = useRouter()
   const colaborador = ref({})
+  const loading = ref(false)
+  const error = ref(null)
+  const cpfInvalido = ref(false)
 
   const carregarColaborador = async () => {
+    loading.value = true
+    error.value = null
     try {
       const response = await axios.get(`http://127.0.0.1:8000/api/colaboradores/${route.params.id}`)
       colaborador.value = response.data
-    } catch (error) {
-      console.error('Erro ao carregar colaborador:', error)
+    } catch (err) {
+      error.value = 'Erro ao carregar colaborador.'
+    } finally {
+      loading.value = false
     }
   }
 
   const salvar = async () => {
+    loading.value = true
+    error.value = null
     try {
-      if (route.params.modo === 'editar') {
-        await axios.put(`http://127.0.0.1:8000/api/colaboradores/${colaborador.value.id}`, colaborador.value)
-      } else {
-        await axios.post('http://127.0.0.1:8000/api/colaboradores', colaborador.value)
-      }
-      router.push('/') // Redirecionar para a lista
-    } catch (error) {
-      console.error('Erro ao salvar colaborador:', error)
+        if (!colaborador.value.id) {
+            console.error("Erro: ID do colaborador não foi carregado.");
+            return;
+        }
+        await axios.put(`http://127.0.0.1:8000/api/colaboradores/${colaborador.value.id}`, colaborador.value);
+        router.push('/');
+    } catch (err) {
+        error.value = 'Erro ao salvar colaborador.'
+    } finally {
+        loading.value = false
     }
-  }
-
-  const cpfInvalido = ref(false)
+};
 
   // Formatar o CPF
   const formatarCpf = () => {
@@ -48,6 +57,14 @@ export function useEditar() {
 
     // Validação: CPF deve ter exatamente 11 números
     cpfInvalido.value = cpf.length !== 11
+  }
+  
+  // Apenas letras e espaços são permitidos
+  const permitirSomenteLetras = (event) => {
+    const charCode = event.charCode ? event.charCode : event.keyCode
+    if ((charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && charCode !== 32) {
+      event.preventDefault()
+    }
   }
 
   // Apenas números são permitidos
@@ -72,7 +89,10 @@ export function useEditar() {
     salvar,
     cancelar,
     permitirSomenteNumeros,
+    permitirSomenteLetras,
     cpfInvalido,
-    formatarCpf
+    formatarCpf,
+    loading,
+    error,
   }
 }

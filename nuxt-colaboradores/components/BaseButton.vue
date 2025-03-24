@@ -21,6 +21,7 @@ const buttonClass = computed(() => {
     case 'visualizar':
     case 'editar':
     case 'cadastrar':
+    case 'submit':
       return 'btn btn-blue'
     case 'excluir':
     case 'cancelar':

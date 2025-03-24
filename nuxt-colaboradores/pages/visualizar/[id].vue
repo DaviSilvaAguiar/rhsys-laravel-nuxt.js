@@ -41,16 +41,24 @@
         <div class="form-group">
           <label for="cargo">Cargo</label>
           <input type="text" v-model="colaborador.cargo" disabled />
-        </div>
-      </form>
+          </div>
+          <div>
+          <BaseButton type="cancelar" @click="voltar" class="btn btn-primary">Voltar</BaseButton>
+       </div>     
+       </form>
     </div>
   </div>
 </template>
 
 <script setup>
+import { useRoute } from 'vue-router'
 import { useVisualizar } from '~/composables/useVisualizar'
 import logo from '~/assets/imagens/logo.png'
+import BaseButton from '~/components/BaseButton.vue'
 
+const route = useRoute()
+const modo = route.params.modo
 
-const { colaborador } = useVisualizar()
+const { colaborador, voltar } = useVisualizar()
+
 </script>

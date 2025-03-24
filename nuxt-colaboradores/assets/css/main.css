@@ -221,3 +221,15 @@ body {
       font-size: 0.875rem;
       margin-top: 5px;
     }
+
+    /*Error State e Load State */
+
+    .loading {
+      color: blue;
+      font-weight: bold;
+    }
+    
+    .error {
+      color: red;
+      font-weight: bold;
+    }
